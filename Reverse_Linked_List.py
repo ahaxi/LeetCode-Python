@@ -1,0 +1,22 @@
+# Description #######################
+# Reverse a singly linked list.
+# ###################################
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    # @param {ListNode} head
+    # @return {ListNode}
+    def reverseList(self, head):
+        current = head  # Start of the beginning part
+        prev = None
+        while current is not None:
+            next_node = current.next
+            current.next = prev
+            prev = current 
+            current = next_node
+        return prev        
